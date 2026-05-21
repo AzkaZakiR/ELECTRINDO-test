@@ -1,0 +1,221 @@
+{
+  "info": {
+    "_postman_id": "6847f1f4-9952-4ee5-84f4-7dbe99a70c14",
+    "name": "Electric Indo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15073410"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"zakk\",\r\n  \"email\": \"zaki@gmail.com\",\r\n  \"role\": \"admin\",\r\n  \"password\": \"admin4321\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5093/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5093",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"zaki@gmail.com\",\r\n  \"password\": \"admin4321\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5093/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5093",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Machine List",
+      "item": [
+        {
+          "name": "Add machine",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"machineCode\": \"CNC-002\",\r\n  \"machineName\": \"CNC mesin\",\r\n  \"machineType\": \"CNC\",\r\n  \"location\": \"Factory B\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5093/machines",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5093",
+              "path": [
+                "machines"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Machine by Id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5093/machines/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5093",
+              "path": [
+                "machines",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "920e9709-6526-4759-9b59-d981ab9476c0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Machines",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5093/machines",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5093",
+              "path": [
+                "machines"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Productiion Result",
+      "item": [
+        {
+          "name": "Production Result",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"machineId\": \"920e9709-6526-4759-9b59-d981ab9476c0\",\r\n  \"status\": \"Error\",\r\n  \"itemsPerMinute\": 0,\r\n  \"temperature\": 6.5,\r\n  \"operatorName\": \"Rama\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5093/production-results",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5093",
+              "path": [
+                "production-results"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Result PRoduction",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5093/production-results",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5093",
+              "path": [
+                "production-results"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

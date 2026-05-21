@@ -1,0 +1,11 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+
+<script>
+   const connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:5001/machineHub").build();
+
+   connection.on("ReceiveMachineUpdate", (data) => {
+      console.log(data);
+   });
+
+   connection.start();
+</script>
